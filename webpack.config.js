@@ -56,6 +56,7 @@ module.exports = (env) => {
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
+      // Will serve up index.html everytime we get a 404 (allows routing to work)
       historyApiFallback: true
     }
   }
