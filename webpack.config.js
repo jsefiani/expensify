@@ -9,7 +9,7 @@ module.exports = (env) => {
   return {
     entry: './src/app.js',
     output: {
-      path: path.join(__dirname, 'public'),
+      path: path.join(__dirname, 'public', 'dist'),
       filename: 'bundle.js'
     },
     module: {
@@ -57,7 +57,9 @@ module.exports = (env) => {
     devServer: {
       contentBase: path.join(__dirname, 'public'),
       // Will serve up index.html everytime we get a 404 (allows routing to work)
-      historyApiFallback: true
+      historyApiFallback: true,
+      publicPath: '/dist/',
+      open: true,
     }
   }
 }
